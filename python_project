@@ -1,0 +1,41 @@
+import random
+
+def your_ai_friend(question):
+    # Convert the question to lowercase for case-insensitive matching
+    question = question.lower()
+
+    if "name" in question:
+        return "I am your AI friend and won't be bothered if you assign me a name."
+
+    elif "how are you" in question:
+        return "I'm just a computer program, so I don't have feelings, but thanks for asking."
+
+    elif "created you" in question or "made you" in question:
+        return "I was created by a programmer using Python."
+
+    elif "what is your purpose" in question:
+        return "My purpose is to assist and chat with you. Feel free to ask me anything!"
+
+    elif "favorite color" in question:
+        colors = ["red", "blue", "green", "yellow", "purple"]
+        return f"My favorite color is {random.choice(colors)}."
+
+    elif "tell a joke" in question:
+        jokes = ["Why don't scientists trust atoms? Because they make up everything!",
+                 "What did one ocean say to the other ocean? Nothing, they just waved.",
+                 "Why did the computer go to therapy? Because it had too many bytes of emotional baggage."]
+        return random.choice(jokes)
+
+    else:
+        return "I'm not sure how to respond to that. Feel free to ask me something else."
+
+# Main loop for interacting with the user
+while True:
+    user_input = input("You: ").strip()
+
+    if user_input.lower() == "exit":
+        print("Your AI Friend: Goodbye! Feel free to chat with me again.")
+        break
+
+    response = your_ai_friend(user_input)
+    print("Your AI Friend:", response)
